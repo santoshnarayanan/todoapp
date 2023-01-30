@@ -7,10 +7,14 @@ const App =() => {
 
   const [notes, setNotes] = useState([]);
 
+  const addNote = (newNote) =>{
+
+  };
+
   return (
     <div className="App">
       <Header />
-        <CreateArea onAdd={addnote} />
+        <CreateArea onAdd={addNote} />
     </div>
   );
 }
