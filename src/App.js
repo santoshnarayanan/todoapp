@@ -8,8 +8,11 @@ const App =() => {
   const [notes, setNotes] = useState([]);
 
   const addNote = (newNote) =>{
-
-  };
+    setNotes(prevNotes => {
+      return[...prevNotes, newNote];
+    });
+    console.log(notes);
+  }
 
   return (
     <div className="App">
