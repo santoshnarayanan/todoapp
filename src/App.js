@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import CreateArea from "./components/CreateaArea";
 import Note from './components/Notes';
+import Footer from './components/footer';
 import { Delete } from '@mui/icons-material';
 
 import { useState } from 'react';
@@ -41,7 +42,7 @@ const App = () => {
             />
         );
       })}
-
+      <Footer />
     </div>
   );
 }
