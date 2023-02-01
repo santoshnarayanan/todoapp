@@ -4,6 +4,8 @@ import { useState } from "react";
 
 const CreateArea = (props) => {
 
+    const [isExpanded , setExpanded] = useState(false);
+
     const [note, setNote] = useState({
         title:"", 
         content:""
@@ -27,12 +29,21 @@ const CreateArea = (props) => {
         event.preventDefault();
     };
 
+    const expand =() =>{
+        setExpanded(true);
+    };
+
     return (
       <div>
           <form className="create-note">
-              <input type="text" name="title" placeholder="Title" 
+            {isExpanded && (
+                <input type="text" name="title" placeholder="Title" 
                 onChange={handleChange}  value={note.title}/>
-              <textarea name="content" rows="3" placeholder="Take a note."  
+            )}
+              
+              <textarea name="content" rows={isExpanded ? 3 : 1}
+                onClick={expand}
+                placeholder="Take a note."  
                 onChange={handleChange}  value={note.content}/>
                 <Fab onClick= {submitNote}>
                     <AddIcon />
